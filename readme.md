@@ -53,8 +53,9 @@ apt install squashfuse snapd -y
 snap install nextcloud
 ```
 ![](/image/installnextcloud.png)
+
 5. Теперь нам нужно добавить пользователя в систему:
-```Bash
+```bash
 adduser <username>
 ```
 ![](/image/adduser.png)
