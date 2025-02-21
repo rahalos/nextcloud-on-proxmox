@@ -40,45 +40,45 @@ FUSE (англ. filesystem in userspace — «файловая система в
 ![](/image/console.png)
 2. В консоли вводим команду:
 
-'''
+```Bash
 apt update && apt upgrade -y
-'''
+```
 3. Теперь, когда CT обновлен, пришло время установить программное обеспечение, которое мы будем использовать для установки пакетов **snap** моментальных снимков. 
 Для этого используйте команду:
-'''Bash
+```Bash
 apt install squashfuse snapd -y
-'''
+```
 4. Используя пакетный менеджер **SNAP** мы будем устанавливать NextCloud: (Если с первого раза не запустилось, повторите команду снова):
-'''Bash
+```Bash
 snap install nextcloud
-'''
+```
 ![](/image/installnextcloud.png)
 5. Теперь нам нужно добавить пользователя в систему:
-'''Bash
+```Bash
 adduser <username>
-'''
+```
 ![](/image/adduser.png)
 6. Добавляем пользователя в sudo группу:
-'''Bash
+```Bash
 adduser <username> sudo
-'''
+```
 7. Создадим администратора NextCloud (Username и Пароль Я вводил того же пользователя, которого я создал):
-'''Bash
+```Bash
 nextcloud.manual-install <username> <password>
-'''
+```
 8. Теперь нам нужно сообщить NextCloud, что мы можем доверять конкретному IP-адресу.
 Смотрим его командой: ip address
-'''
+```Bash
 ip a
-'''
+```
 Убеждаемся что контейнер доступен по нем:
-'''bash.sh
+```Bash
 nextcloud.occ config:system:set trusted_domains 1 --value=<ip a>
-'''
+```
 9. Можно добавить домен привязанный к вашему адресу. (привязать домен вы можете используя сервисы для DDNS, или имея белый адрес от провайдера - привязать просто к нему свой) :
-'''bash.sh
+```Bash
 nextcloud.occ config:system:set trusted_domains 1 --value=example.com
-'''
+```
 > Использовать одновремено два адреса не получится. Поэтому либо внутренний адрес, либо домен. 
 
 10. Конечный результат
