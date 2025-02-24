@@ -104,7 +104,7 @@ nextcloud.occ config:system:set trusted_domains 1 --value=example.com
 ### Подключение внешнего диска в Nextcloud через SSHFS в PROXMOX
 > Для работы плагина внешнего хранения требуется предоставить Snap разрешение на доступ к съемным носителям, можно не использовать sshfs.
 
-1. Установим плагин "External Storage Support", из вприложений NextCloud\
+1. Установим плагин "External Storage Support", из приложений NextCloud\
 ![](/image/INSTALLESS.png)
 
 2. В настройках параметра сервера вибираем меню внешнего хранения, которое выводит нас на отдельною страницу настроек Внешнего Хранения.\
@@ -114,7 +114,7 @@ nextcloud.occ config:system:set trusted_domains 1 --value=example.com
 ```bash
 apt install sshfs
 ```
-4. Подмонтироваем нужный нам диск в папку nextCloud
+4. Подмонтироваем нужный нам диск в папку NextCloud
 ```bash
 sshfs username@192.168.0.0:/mnt/disk1 /var/snap/nextcloud/common/nextcloud/data/username/files/data3
 ```
